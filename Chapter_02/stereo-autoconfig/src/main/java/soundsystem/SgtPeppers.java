@@ -11,5 +11,10 @@ public class SgtPeppers implements CompactDisc {
     System.out.println("Playing " + title + " by " + artist);
     //System.out.print("Playing Sgt. Pepper's Lonely Hearts Club Band by The Beatles\n");
   }
-  
+
+  @Override
+  public int getMusicNum() {
+    return 3;
+  }
+
 }
