@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 //组件
 //@Component
+//如果在配置类中已经声明了Bean就不需要在此声明Component;
 public class TesterImp implements ITester {
 
     private CompactDisc compactDisc;
