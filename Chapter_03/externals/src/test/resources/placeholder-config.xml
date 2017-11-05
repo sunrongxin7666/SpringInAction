@@ -6,9 +6,11 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
+  <!--设置资源占位符，设置这个才能使用占位符-->
   <context:property-placeholder
     location="com/soundsystem/app.properties" />
 
+    <!--Bean参数的占位符-->
   <bean class="com.soundsystem.BlankDisc"
     c:_0 = "${disc.title}"
     c:_1 = "${disc.artist}"/>

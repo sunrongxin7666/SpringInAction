@@ -7,6 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 @Configuration
+//声明属性来源
 @PropertySource("classpath:/com/soundsystem/app.properties")
 public class EnvironmentConfig {
 
@@ -16,7 +17,7 @@ public class EnvironmentConfig {
   @Bean
   public BlankDisc blankDisc() {
     return new BlankDisc(
-        env.getProperty("disc.title"),
+        env.getProperty("disc.title"),//获得属性
         env.getProperty("disc.artist"));
   }
   
