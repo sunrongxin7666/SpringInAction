@@ -14,16 +14,18 @@ public class DataSourceConfig {
   
   @Bean(destroyMethod = "shutdown")
   @Profile("dev")
+  //嵌入式数据库，用于测试环境
   public DataSource embeddedDataSource() {
     return new EmbeddedDatabaseBuilder()
-        .setType(EmbeddedDatabaseType.H2)
-        .addScript("classpath:schema.sql")
+        .setType(EmbeddedDatabaseType.H2)//Hypersonic数据库
+        .addScript("classpath:schema.sql")//运行脚本
         .addScript("classpath:test-data.sql")
         .build();
   }
 
   @Bean
   @Profile("prod")
+  //用于生产环境
   public DataSource jndiDataSource() {
     JndiObjectFactoryBean jndiObjectFactoryBean = new JndiObjectFactoryBean();
     jndiObjectFactoryBean.setJndiName("jdbc/myDS");

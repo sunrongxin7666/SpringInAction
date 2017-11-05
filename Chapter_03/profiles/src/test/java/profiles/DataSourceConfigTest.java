@@ -23,6 +23,7 @@ public class DataSourceConfigTest {
 
   @RunWith(SpringJUnit4ClassRunner.class)
   @ContextConfiguration(classes=DataSourceConfig.class)
+  //激活所需要的配置
   @ActiveProfiles("dev")
   public static class DevDataSourceTest {
     @Autowired
@@ -65,20 +66,20 @@ public class DataSourceConfigTest {
     @Autowired
     private DataSource dataSource;
     
-//    @Test
-//    public void shouldBeEmbeddedDatasource() {
-//      assertNotNull(dataSource);
-//      JdbcTemplate jdbc = new JdbcTemplate(dataSource);
-//      List<String> results = jdbc.query("select id, name from Things", new RowMapper<String>() {
-//        @Override
-//        public String mapRow(ResultSet rs, int rowNum) throws SQLException {
-//          return rs.getLong("id") + ":" + rs.getString("name");
-//        }
-//      });
-//
-//      assertEquals(1, results.size());
-//      assertEquals("1:A", results.get(0));
-//    }
+    @Test
+    public void shouldBeEmbeddedDatasource() {
+      assertNotNull(dataSource);
+      JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+      List<String> results = jdbc.query("select id, name from Things", new RowMapper<String>() {
+        @Override
+        public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+          return rs.getLong("id") + ":" + rs.getString("name");
+        }
+      });
+
+      assertEquals(1, results.size());
+      assertEquals("1:A", results.get(0));
+    }
   }
 
   @RunWith(SpringJUnit4ClassRunner.class)
