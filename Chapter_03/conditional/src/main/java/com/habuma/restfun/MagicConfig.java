@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class MagicConfig {
 
   @Bean
-  @Conditional(MagicExistsCondition.class)
+  @Conditional(MagicExistsCondition.class)//设定条件，满足了才会创建bean;
   public MagicBean magicBean() {
     return new MagicBean();
   }

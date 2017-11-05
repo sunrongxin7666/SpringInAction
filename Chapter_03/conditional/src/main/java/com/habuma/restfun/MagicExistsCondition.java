@@ -7,10 +7,17 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 
 public class MagicExistsCondition implements Condition {
 
+  /**
+   * 覆盖matches方法
+   * @param context
+   * @param metadata
+   * @return
+   */
   @Override
   public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
     Environment env = context.getEnvironment();
-    return env.containsProperty("magic");
+    return true;
+    //return env.containsProperty("magic");
   }
   
 }
