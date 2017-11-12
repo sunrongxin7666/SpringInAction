@@ -13,9 +13,10 @@ public class HomeControllerTest {
   @Test
   public void testHomePage() throws Exception {
     HomeController controller = new HomeController();
+    // 创建MocMvc
     MockMvc mockMvc = standaloneSetup(controller).build();
-    mockMvc.perform(get("/"))
-           .andExpect(view().name("home"));
+    mockMvc.perform(get("/"))//get请求
+           .andExpect(view().name("home"));//预期返回的视图为home
   }
 
 }
