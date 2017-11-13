@@ -20,14 +20,18 @@ import spittr.web.SpittleController;
 public class SpittleControllerTest {
 
   @Test
-  public void houldShowRecentSpittles() throws Exception {
+  public void shouldShowRecentSpittles() throws Exception {
+    //创建测试数据
     List<Spittle> expectedSpittles = createSpittleList(20);
     SpittleRepository mockRepository = mock(SpittleRepository.class);
+    // 定义当调用findSpittles方法时返回测试数据
     when(mockRepository.findSpittles(Long.MAX_VALUE, 20))
         .thenReturn(expectedSpittles);
 
     SpittleController controller = new SpittleController(mockRepository);
     MockMvc mockMvc = standaloneSetup(controller)
+            //路径要求和WebConfig中InternalResourceViewResolver的设置相符合
+            //因为MockMVC无法区分控制器和还是View,所以需要设定其起始展示的view
         .setSingleView(new InternalResourceView("/WEB-INF/views/spittles.jsp"))
         .build();
 

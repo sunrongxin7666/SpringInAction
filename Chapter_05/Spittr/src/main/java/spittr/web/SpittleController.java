@@ -22,15 +22,16 @@ public class SpittleController {
   
   private SpittleRepository spittleRepository;
 
-  @Autowired
+  @Autowired //自动注入 spittleRepository
   public SpittleController(SpittleRepository spittleRepository) {
     this.spittleRepository = spittleRepository;
   }
 
   @RequestMapping(method=RequestMethod.GET)
   public List<Spittle> spittles(
-      @RequestParam(value="max", defaultValue=MAX_LONG_AS_STRING) long max,
-      @RequestParam(value="count", defaultValue="20") int count) {
+      @RequestParam(value="max", defaultValue=MAX_LONG_AS_STRING) long max, //传入参数 max
+      @RequestParam(value="count", defaultValue="20") int count) { //参数 count
+
     return spittleRepository.findSpittles(max, count);
   }
 

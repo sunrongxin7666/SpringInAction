@@ -44,7 +44,8 @@ public class Spittle {
   public Double getLatitude() {
     return latitude;
   }
-  
+
+  //利用Apache Common Lang包来实现
   @Override
   public boolean equals(Object that) {
     return EqualsBuilder.reflectionEquals(this, that, "id", "time");
