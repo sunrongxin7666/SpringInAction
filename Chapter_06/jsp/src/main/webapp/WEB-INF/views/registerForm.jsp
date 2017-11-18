@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
-<%--标签--%>
+<%--标签sf:spring form--%>
 <%@ page session="false" %>
 <html>
   <head>
@@ -11,6 +11,7 @@
   <body>
     <h1>Register</h1>
 
+    <%--commandName:表示model的类名--%>
     <sf:form method="POST" commandName="spitter" >
       <sf:errors path="*" element="div" cssClass="errors" />
       <sf:label path="firstName" 

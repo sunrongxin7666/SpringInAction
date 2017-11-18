@@ -32,7 +32,7 @@ public class SpitterController {
   
   @RequestMapping(value="/register", method=GET)
   public String showRegistrationForm(Model model) {
-    model.addAttribute(new Spitter());
+    model.addAttribute(new Spitter());//与前端页面中的对应的model类一致
     return "registerForm";
   }
   
