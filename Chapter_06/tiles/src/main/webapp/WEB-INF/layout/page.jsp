@@ -1,4 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
+<%--tiles标签--%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="t" %>
 <%@ page session="false" %>
 <html>
@@ -10,6 +11,7 @@
   </head>
   <body>
     <div id="header">
+      <%--插入对应的部分--%>
       <t:insertAttribute name="header" />
     </div>
     <div id="content">

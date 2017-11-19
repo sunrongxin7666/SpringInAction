@@ -29,13 +29,16 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
   
   // Tiles
+  // 定位和加载Tiles定义并协调生成Tiles
   @Bean
   public TilesConfigurer tilesConfigurer() {
     TilesConfigurer tiles = new TilesConfigurer();
+    // 定义Tiles的位置
     tiles.setDefinitions(new String[] {
         "/WEB-INF/layout/tiles.xml",
         "/WEB-INF/views/**/tiles.xml"
     });
+    // 启动刷新功能
     tiles.setCheckRefresh(true);
     return tiles;
   }
