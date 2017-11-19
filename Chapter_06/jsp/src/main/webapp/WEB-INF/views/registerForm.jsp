@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
-<%--标签sf:spring form--%>
+<%--表单标签sf:spring form--%>
 <%@ page session="false" %>
 <html>
   <head>
@@ -13,6 +13,7 @@
 
     <%--commandName:表示model的类名--%>
     <sf:form method="POST" commandName="spitter" >
+      <%--默认情况下，errors会被渲染成<span>,但是不适合多行，所以设置成<div>标签，同时css要设置成div.errors以对应--%>
       <sf:errors path="*" element="div" cssClass="errors" />
       <sf:label path="firstName" 
           cssErrorClass="error">First Name</sf:label>: 

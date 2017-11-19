@@ -12,6 +12,8 @@ public class Spitter {
   private Long id;
   
   @NotNull
+  // Message中的内容要要用大括号括起来，否者将以文本显示
+  // 有了大括号，会在ValidactionMessage.properites中找到对应的内容
   @Size(min=5, max=16, message="{username.size}")
   private String username;
 
