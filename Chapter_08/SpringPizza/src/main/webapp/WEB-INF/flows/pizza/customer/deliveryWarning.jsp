@@ -7,7 +7,7 @@
 		
 		<p>The address is outside of our delivery area. The order
 		may still be taken for carry-out.</p>
-		
+		<%--_eventId后面表示下一个状态是什么--%>
 		<a href="${flowExecutionUrl}&_eventId=accept">Accept</a> | 
 		<a href="${flowExecutionUrl}&_eventId=cancel">Cancel</a>
   </body>

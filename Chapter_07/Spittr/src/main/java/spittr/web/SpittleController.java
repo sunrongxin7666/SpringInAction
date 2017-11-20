@@ -41,6 +41,7 @@ public class SpittleController {
       Model model) {
     Spittle spittle = spittleRepository.findOne(spittleId);
     if (spittle == null) {
+      // 如果找不到对应的数据，抛出异常
       throw new SpittleNotFoundException();
     }
     model.addAttribute(spittle);
@@ -57,7 +58,9 @@ public class SpittleController {
       return "error/duplicate";
     }
   }
-  
+
+
+  // 设置处理某类异常
   @ExceptionHandler(DuplicateSpittleException.class)
   public String handleNotFound() {
     return "error/duplicate";

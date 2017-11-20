@@ -1,5 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+<!--添加独特的命名空间-->
   <head>
     <title>Spitter</title>
     <link rel="stylesheet" 
@@ -11,7 +12,8 @@
   
     <div id="content">
       <h1>Welcome to Spitter</h1>
-  
+
+      <!--使用特殊的属性-->
       <a th:href="@{/spittles}">Spittles</a> | 
       <a th:href="@{/spitter/register}">Register</a>
       

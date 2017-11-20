@@ -26,6 +26,7 @@ public class SpitterWebInitializer extends AbstractAnnotationConfigDispatcherSer
 
   @Override
   protected void customizeRegistration(Dynamic registration) {
+    // 设置MultipartConfig
     registration.setMultipartConfig(
         new MultipartConfigElement("/tmp/spittr/uploads", 2097152, 4194304, 0));
   }
